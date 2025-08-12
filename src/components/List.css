@@ -20,3 +20,10 @@
     flex-direction: column;
     gap: 20px;
 }
+
+.List .todos_count {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
