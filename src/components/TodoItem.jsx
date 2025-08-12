@@ -26,14 +26,16 @@ const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
     );
 };
 
-export default memo(TodoItem, (prevProps, nextProps) => {
-    // onUpdate, onDelete 가 리렌더링 시 새로 함수가 생성되어 주소값이 바뀐다. 그래서 props 가 바뀌므로 리렌더링 됨
-    // T -> Props 바뀌지 않음
-    // F -> Props 바뀜 -> 상태 todos 값이 바뀔 때만(리렌더링)
-    if (prevProps.id !== nextProps.id) return false;
-    if (prevProps.isDone !== nextProps.isDone) return false;
-    if (prevProps.content !== nextProps.content) return false;
-    if (prevProps.date !== nextProps.date) return false;
+// export default memo(TodoItem, (prevProps, nextProps) => {
+//     // onUpdate, onDelete 가 리렌더링 시 새로 함수가 생성되어 주소값이 바뀐다. 그래서 props 가 바뀌므로 리렌더링 됨
+//     // T -> Props 바뀌지 않음
+//     // F -> Props 바뀜 -> 상태 todos 값이 바뀔 때만(리렌더링)
+//     if (prevProps.id !== nextProps.id) return false;
+//     if (prevProps.isDone !== nextProps.isDone) return false;
+//     if (prevProps.content !== nextProps.content) return false;
+//     if (prevProps.date !== nextProps.date) return false;
 
-    return true;
-});
+//     return true;
+// });
+
+export default memo(TodoItem);
